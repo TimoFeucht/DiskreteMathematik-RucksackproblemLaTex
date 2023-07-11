@@ -15,7 +15,7 @@ Im zweiten Teil der Arbeit werden Algorithmen zur Lösung des Rucksackproblems v
 Dabei werden Algorithmen mit Suchbaum, der Greedy-Algorithmus und Algorithmen mit dynamischer Programmierung betrachtet.
 
 \chapter{Mathematische Formulierung}
-Mathematisch kann das Rucksackproblem durch ein ganzzahliges lineares Programm abgebildete werden.
+Mathematisch kann das Rucksackproblem durch ein ganzzahliges lineares Programm abgebildet werden.
 Dabei gebe es ein Rucksack oder anderes Gefäß mit Kapazität $c$ und $n$ Objekte beziehungsweise Gegenstände mit
 \begin{itemize}
     \item Profit $p_j$ mit $j=1,\ldots,n$ und
@@ -43,7 +43,9 @@ w_j\le c,\ \ j=1,\ldots,n
 
 
 \section{Komplexität NP-Schwer/Vollständig}
-Das Rucksackproblem ist NP-Schwer und NP-Vollständig, weil bewiesen wurde, dass das Teilsummenproblem (englisch: \ac{SSB}) ebenfalls NP-Schwer und NP-Vollständig ist. \textcolor{red}{Beweis aufführen? vgl. Martello S.233f} Das Teilsummenproblem ein Spezialfall des Rucksackproblems unter der Bedingung, dass $p_j=w_j$ für alle $j \in \{1, \dots n\}$. Das Teilsummenproblem kann mathematisch wie folgt dargestellt werden: \cite[vgl.][]{Martello1987}
+Das Rucksackproblem ist NP-Schwer und NP-Vollständig, weil bewiesen wurde, dass das Teilsummenproblem (englisch: \ac{SSB}) ebenfalls NP-Schwer und NP-Vollständig ist. 
+Das Teilsummenproblem ein Spezialfall des Rucksackproblems unter der Bedingung, dass $p_j=w_j$ für alle $j \in \{1, \dots n\}$.
+Das Teilsummenproblem kann mathematisch wie folgt dargestellt werden: \cite[vgl.][]{Martello1987}
 \newpage
 Maximize
 \begin{equation}
@@ -56,7 +58,10 @@ x_j\in\{0,1\},\ \ j=1,\ldots,n
 \end{eqnarray}
 
 
-\textcolor{red}{stimmt der satz so?:} Dadurch kann das Rucksackproblem wiederum auf das Teilsummenproblem reduziert werden. 
+Dadurch kann das Rucksackproblem wiederum auf das Teilsummenproblem reduziert werden. 
+\\
+Für das Rucksackproblem es keinen Algorithmus, der das Problem in pseudopolynomieller Zeit lösen kann.
+Dies ist ein weiteres Merkmal, dass das Rucksackproblem NP-Schwer/Vollständig ist.
 
 \section{Verschiedene Arten des Rucksackproblems}
 Neben dem klassischen 0-1 Rucksackproblem gibt es weitere Formen des Problems, die im Folgenden in einigen Sätzen beschrieben werden. Es werden nicht alle Varianten des Rucksackproblems aufgeführt. 
