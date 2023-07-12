@@ -1,12 +1,6 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Algorithmen die das Rucksackproblem lösen}
-Algorithmen, die das Rucksackproblem lösen können in zwei Kategorien 
-eingeteilt werden: Algorithmen, die immer die Optimale Lösung finden, 
-dafür aber eine inakzeptable Zeitkomplexität haben, 
-oder Algorithmen mit geringerer Zeitkomplexitätsklasse, die 
-aber nicht für eine Optimale Lösung garantieren.
-
 \section{Brute-Force Algorithmus}
 Um den Brute-Force-Algorithmus mathematisch zu beschreiben, 
 müssen zuerst die Eingabeparameters des Problems beachtet werden. Sei 
@@ -18,25 +12,24 @@ Der Algorithmus lässt sich nun in fünf Schritten beschreiben:
 
 \texttt{Schritt 1}
 Zunächst werden alle möglichen Teilmengen der Liste berechnet. 
-Dies bedeutet, dass jede Kombination von Elementen gebildet 
-wird, was insgesamt $2^n$ mögliche Teilmengen ergibt, wobei $n$ 
-die Anzahl der Elemente in der Liste ist.
+Das bedeutet, dass jede Kombination von Elementen gebildet 
+wird, was insgesamt $2^n$ mögliche Teilmengen ergibt.
 
 \texttt{Schritt 2:}
-Für jede Teilmenge wird die Summe der Gewichte berechnet. 
-Es wird überprüft, ob die Summe das Gewichtslimit nicht 
+Für jede Teilmenge wird die Summe der Gewichte berechnet und 
+überprüft, ob die Summe das Gewichtslimit  
 überschreitet. Wenn die Summe das Gewichtslimit nicht 
 überschreitet, wird die Teilmenge als gültige Lösung 
-betrachtet. Andernfalls wird sie verworfen.
+betrachtet, andernfalls wird sie verworfen.
 
 \texttt{Schritt 3:}
 Schritt 2 wird für jede Teilmenge wiederholt, bis eine 
 Teilmenge gefunden wird, deren Gewicht das Gewichtslimit 
-nicht erhöht.
+nicht überschreitet.
 
 \texttt{Schritt 4:}
 Die Werte der gültigen Teilmengen, die die Bedingung in 
-Schritt 3 erfüllen, werden summiert.
+Schritt 3 erfüllen, werden aufsummiert.
 
 \texttt{Schritt 5:}
 Schließlich wird der höchste Wert aus den gültigen 
@@ -49,10 +42,10 @@ macht den Brute-Force-Algorithmus für große $n$ unpraktikabel.\ \cite[vlg.]{hr
 
 \section{Branch-Bound Algorithmus}
 Zuerst wird die Entscheidungsvariable $x_j$ für jeden 
-Gegenstand $j$ definiert. Wenn Gegenstand $j$ ausgewählt wird, ist $x_i$ 
+Gegenstand $j$ definiert. Wenn Gegenstand $j$ ausgewählt wird, ist $x_j$ 
 gleich $1$, andernfalls ist $x_j$ gleich $0$. Darüber hinaus 
-verwenden wird die Funktion $f(x)$ zur Berechnung des 
-Gesamtwerts einer Teilmenge von Gegenständen $x$ und die 
+wird die Funktion $f(x)$ zur Berechnung des 
+Gesamtprofits einer Teilmenge von Gegenständen $x$ und die 
 Funktion $g(x)$ zur Berechnung des Gesamtgewichts einer 
 Teilmenge von Gegenständen $x$ verwendet.
 
@@ -65,7 +58,7 @@ Teilmenge von Gegenständen. Der Algorithmus durchläuft den
 Suchbaum rekursiv, indem er Teilräume basierend auf 
 Schätzungen und Grenzwerten erzeugt und abschneidet.
 
-Die Schätzungsfunktion $E(xs)$ wird verwendet, um eine obere 
+Die Schätzungsfunktion $E(x)$ wird verwendet, um eine obere 
 Schranke für den Wert einer Teilmenge von Gegenständen $j$ zu 
 berechnen. Diese Schätzung basiert auf einer Relaxation des 
 Rucksackproblems, bei der angenommen wird, dass beliebige 
@@ -73,7 +66,7 @@ Bruchteile von Gegenständen ausgewählt werden können. Eine
 mögliche Schätzungsfunktion ist:
 
 \begin{equation}
-    E(x) = f(x) + (W - g(x)) \cdot \left(\frac{p_{j+1}}{w_{j+1}}\right)
+    E(x) = f(x) + (c - g(x)) \cdot \left(\frac{p_{j+1}}{w_{j+1}}\right)
 \end{equation}
 
 wobei $j$ der Index des nächsten Gegenstands ist, der nicht 
@@ -85,7 +78,7 @@ Kapazität optimal auszunutzen.
 Basierend auf der Schätzungsfunktion wird ein Grenzwert 
 (bound) für den aktuellen Teilraum berechnet. Der Grenzwert 
 $B(x)$ wird definiert als der maximale Wert, der in einem 
-Teilraum von Gegenständen x erreicht werden kann, ohne das 
+Teilraum von Gegenständen $j$ erreicht werden kann, ohne das 
 Gewichtslimit zu überschreiten und wird 
 rekursiv berechnet, indem alle Teilräume des aktuellen 
 Teilraums betrachtet werden. Wenn ein Teilraum das 
@@ -116,7 +109,9 @@ Die Laufzeit des
 Branch-and-Bound-Algorithmus hängt stark von der Größe des 
 Suchraums ab. In einigen Fällen kann der Algorithmus 
 sehr zeitaufwändig sein, insbesondere wenn die Anzahl der 
-Gegenstände groß ist.\ \cite[vgl.]{Martello1987}
+Gegenstände groß ist. Die beste mögliche Laufzeit ist 
+$O(n)$, falls nur ein Ast des Baums durchsucht werden muss und 
+die schlechteste $O(2^n)$\ \cite[vgl.]{Martello1987}
 
 \section{Greedy-Algorithmus}
 Der Greedy-Algorithmus zur Lösung des Rucksackproblems besteht 
@@ -216,5 +211,8 @@ Der Wert in $dp[n][c]$ gibt die maximale Gesamtwertsumme an und
 repräsentiert somit die optimale Lösung des Rucksackproblems.
 
 Die Laufzeit dieses Algorithmus beträgt $O(nc)$, da 
-eine Tabelle der Größe $(n+1) × (c+1)$ erstellt wird und 
-jeder Eintrag der Tabelle in konstanter Zeit berechnet wird.\ \cite[vgl.]{Martello1987}
+eine Tabelle der Größe $(n+1) x (c+1)$ erstellt wird und 
+jeder Eintrag der Tabelle in konstanter Zeit berechnet wird.
+
+Der größte Nachteil der Lösung mit dynamischer Programmierung ist, dass 
+sie nur für Ganzzahlige Gewichte funktioniert.\ \cite[vgl.]{Martello1987}
