@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex dokumentation"] 1687934561 "dokumentation.aux" "dokumentation.bbl" "dokumentation" 1687934750 0
+["bibtex dokumentation"] 1689039581 "dokumentation.aux" "dokumentation.bbl" "dokumentation" 1689146785 0
   "./bibliographie.bib" 1687930649 6254 f6e741645765d70b51df2b0c652bb58b ""
-  "./dokumentation-blx.bib" 1687934747 340 25674e554aa25e98ea59ec40797d70f1 ""
+  "./dokumentation-blx.bib" 1689146783 340 25674e554aa25e98ea59ec40797d70f1 ""
   "C:/Users/euf2fe/AppData/Local/Programs/MiKTeX/bibtex/bst/biblatex/biblatex.bst" 1657613115 65483 3b5a53ada692a06ce416d088de6a391b ""
-  "dokumentation.aux" 1687934747 11453 d89a81ddae33f68fd1234715d844a8d8 "pdflatex"
+  "dokumentation.aux" 1689146783 11453 1a620d2770eefe77aa47df150fe92340 "pdflatex"
   (generated)
   "dokumentation.bbl"
   "dokumentation.blg"
   (rewritten before read)
-["cusdep glo gls dokumentation"] 1687932744 "dokumentation.glo" "dokumentation.gls" "dokumentation" 1687934750 0
-  "dokumentation.glo" 1687934746 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["cusdep glo gls dokumentation"] 1687932744 "dokumentation.glo" "dokumentation.gls" "dokumentation" 1689146785 0
+  "dokumentation.glo" 1689146781 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "dokumentation.gls"
   (rewritten before read)
-["pdflatex"] 1687934741 "c:/Users/euf2fe/Documents/DiskreteMatematik_Latex/DiskreteMathematik-RucksackproblemLaTex/dokumentation.tex" "dokumentation.pdf" "dokumentation" 1687934750 0
+["pdflatex"] 1689146776 "c:/Users/euf2fe/Documents/DiskreteMatematik_Latex/DiskreteMathematik-RucksackproblemLaTex/dokumentation.tex" "dokumentation.pdf" "dokumentation" 1689146785 0
   "C:/Users/euf2fe/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1687750259 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/euf2fe/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1674572299 23173453 5f00ac722b3b7ba8486016cdebfef63e ""
   "C:/Users/euf2fe/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -307,18 +307,18 @@
   "ads/glossary.tex" 1687750204 415 8fcc3eec5a4a302cc681b41d86b74292 ""
   "ads/header.tex" 1687750204 6118 970d60aa4cbecbd3d089aef8e104a5e9 ""
   "c:/Users/euf2fe/Documents/DiskreteMatematik_Latex/DiskreteMathematik-RucksackproblemLaTex/dokumentation.tex" 1687750204 2141 41b8bc6d0729e593fa006ed0b61ac698 ""
-  "content/01kapitel.tex" 1687933459 6653 c672a3a39a82622ddc50adc559796b44 ""
+  "content/01kapitel.tex" 1689039664 6755 e88fb54db81e0018941ca2ccafc5ea7d ""
   "content/02kapitel.tex" 1687930649 2961 0b3ff97ffcf1a769e39c4fc613c93d20 ""
-  "content/03kapitel.tex" 1687934741 1541 042cfe8f5c9b82da82ef810b0ae43648 ""
-  "dokumentation.aux" 1687934747 11453 d89a81ddae33f68fd1234715d844a8d8 "pdflatex"
-  "dokumentation.bbl" 1687934562 8130 4aa9c9b7ba4933f19123a88ea423754d "bibtex dokumentation"
+  "content/03kapitel.tex" 1689146785 1559 997f093b87cc1d08b8f27d25797e0375 ""
+  "dokumentation.aux" 1689146783 11453 1a620d2770eefe77aa47df150fe92340 "pdflatex"
+  "dokumentation.bbl" 1689039582 8130 4aa9c9b7ba4933f19123a88ea423754d "bibtex dokumentation"
   "dokumentation.gls" 1687932745 7 9f404503043ec80c08484be9f659189e "cusdep glo gls dokumentation"
-  "dokumentation.lof" 1687934747 255 1ded9d2c504324beb211a5fb224965b2 "pdflatex"
-  "dokumentation.lol" 1687934747 316 cd71ce582c97fe314abf015ec1656c8f "pdflatex"
-  "dokumentation.lot" 1687934747 255 1ded9d2c504324beb211a5fb224965b2 "pdflatex"
-  "dokumentation.run.xml" 1687934747 2708 ddaf79e607bf706bafcb6d8158bfb327 "pdflatex"
+  "dokumentation.lof" 1689146783 255 1ded9d2c504324beb211a5fb224965b2 "pdflatex"
+  "dokumentation.lol" 1689146783 316 cd71ce582c97fe314abf015ec1656c8f "pdflatex"
+  "dokumentation.lot" 1689146783 255 1ded9d2c504324beb211a5fb224965b2 "pdflatex"
+  "dokumentation.run.xml" 1689146783 2708 ddaf79e607bf706bafcb6d8158bfb327 "pdflatex"
   "dokumentation.tex" 1687750204 2141 41b8bc6d0729e593fa006ed0b61ac698 ""
-  "dokumentation.toc" 1687934747 1443 3a156bfe4e24feb12d034e19a7fdca7b "pdflatex"
+  "dokumentation.toc" 1689146783 1443 3a156bfe4e24feb12d034e19a7fdca7b "pdflatex"
   "einstellungen.tex" 1687750204 4987 613491deb5151ada1768c048cb40df86 ""
   "images/dhbw.png" 1687750204 28036 72715f284b6ae369970da384742d8059 ""
   "lang/de.tex" 1687750204 741 b0101c5d0d0fd7a7ab27fd0055cc6e22 ""
