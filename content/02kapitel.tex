@@ -3,14 +3,13 @@
 
 \newcommand*{\dpd}{\ensuremath{\mathit{dp}}}
 
-\chapter{Algorithmen zur lösung des Rucksackproblems}
+\chapter{Algorithmen zur Lösung des Rucksackproblems}
 \section{Brute-Force Algorithmus}
 Um den Brute-Force-Algorithmus mathematisch zu beschreiben, 
 müssen zuerst die Eingabeparameter des Problems definiert werden. Sei 
 $n$ die Gesamtanzahl der verfügbaren Gegenstände. Jeder 
 Gegenstand $j$ hat einen bestimmten Profit $p_j$ und ein Gewicht $w_j$. 
 Der Rucksack hat eine maximale Kapazität $c$.
-
 Der Algorithmus lässt sich nun in fünf Schritten beschreiben:
 
 \texttt{Schritt 1}
@@ -36,20 +35,20 @@ Schritt 3 erfüllen, werden aufsummiert.
 
 \texttt{Schritt 5:}
 Schließlich wird der höchste Wert aus den gültigen 
-Teilmengen als Antwort auf das Problem ausgewählt.\ \cite[vgl.]{balogun2022explanatory}
+Teilmengen als Antwort auf das Problem ausgewählt.\ \cite[vgl.][]{balogun2022explanatory}
 
 Die Laufzeitkomplexität des Brute-Force-Algorithmus beträgt 
 $O(n2^n)$, da der Algorithmus alle möglichen Kombinationen der 
 Gegenstände durchläuft. Diese exponentielle Komplexität 
-macht den Brute-Force-Algorithmus für große $n$ unpraktikabel.\ \cite[vlg.]{hristakeva2005different}
+macht den Brute-Force-Algorithmus für große $n$ unpraktikabel.\ \cite[vgl.][]{hristakeva2005different}
 
 \section{Branch-and-Bound Algorithmus}
 Zuerst wird die Entscheidungsvariable $x_j$ für jeden 
-Gegenstand $j$ definiert. Wenn Gegenstand $j$ ausgewählt wird, ist $x_j = 1$, 
+Gegenstand $j$ definiert. Wenn der Gegenstand $j$ ausgewählt wird, ist $x_j = 1$, 
 andernfalls ist $x_j = 0$. Darüber hinaus 
-wird die Funktion $f(x) = \sum_{j=1}^{n}(x_j*p_j)$ zur Berechnung des 
+wird die Funktion $f(x) = \sum_{j=1}^{n}(x_j  p_j)$ zur Berechnung des 
 Gesamtprofits einer Teilmenge von Gegenständen $x$ und die 
-Funktion $g(x) = \sum_{j=1}^{n}(x_j*w_j)$ zur Berechnung des Gesamtgewichts einer 
+Funktion $g(x) = \sum_{j=1}^{n}(x_j w_j)$ zur Berechnung des Gesamtgewichts einer 
 Teilmenge von Gegenständen $x$ verwendet.
 
 Der Branch-and-Bound-Algorithmus beginnt mit einer 
@@ -73,7 +72,7 @@ mögliche Schätzungsfunktion ist:
     E(x) = f(x) + (c - g(x)) \cdot \left(\frac{p_{j+1}}{w_{j+1}}\right)
 \end{equation}
 
-wobei $j + 1$ der Index des nächsten Gegenstands ist, der nicht 
+\noindent wobei $j + 1$ der Index des nächsten Gegenstands ist, der nicht 
 in $x$ enthalten ist. Diese Schätzung beruht auf der Annahme, 
 dass der nächste Gegenstand mit dem höchsten Verhältnis von 
 Wert zu Gewicht ausgewählt wird, um die verbleibende 
@@ -105,17 +104,13 @@ werden.
 Der Algorithmus terminiert, wenn alle Knoten des Suchbaums 
 erkundet wurden. Die optimale Lösung ist der Knoten mit dem 
 höchsten Gesamtwert. Der Branch-and-Bound-Algorithmus 
-gewährleistet die Rückgabe einer optimalen Lösung, da er 
-systematisch den Suchraum durchsucht und unproduktive 
-Teilräume abschneidet.
+garantiert die Rückgabe einer optimalen Lösung.
 
 Die Laufzeit des 
 Branch-and-Bound-Algorithmus hängt stark von der Größe des 
-Suchraums ab. In einigen Fällen kann der Algorithmus 
-sehr zeitaufwändig sein, insbesondere wenn die Anzahl der 
-Gegenstände groß ist. Die beste mögliche Laufzeit ist 
+Suchraums ab. Die beste mögliche Laufzeit ist 
 $O(n)$, falls nur ein Ast des Baums durchsucht werden muss und 
-die schlechteste $O(2^n)$\ \cite[vgl.]{Martello1987}
+die schlechteste $O(2^n)$.\ \cite[vgl.][]{Martello1987}
 
 \section{Greedy-Algorithmus}
 Der Greedy-Algorithmus zur Lösung des Rucksackproblems besteht 
@@ -130,8 +125,9 @@ Verhältnis von Wert zu Gewicht.
 \[r_1 \geq r_2 \geq \cdots \geq r_n\]
 
 \texttt{Schritt 3:} Initialisiere den Rucksack und den Gesamtwert.
-\[   \text{R} = \{\}; \\
-    \text{P} = 0 \]
+\[   \text{$R$} = \{\}; \\
+    \text{$P$} = 0 \]
+
 \texttt{Schritt 4:} Durchlaufe die sortierte Liste der Gegenstände.\\
 Für $j = 1$ bis $n$: 
 Wenn das Hinzufügen des Gegenstands $j$ zum Rucksack den 
@@ -160,19 +156,13 @@ garantieren kann.
 Die Zeitkomplexität des Greedy-Algorithmus zur Lösung des 
 Rucksackproblems ist $O(n\log(n))$, 
 wobei $n$ die Anzahl der Gegenstände darstellt. Dabei nimmt das 
-sortieren der Liste der Gegenstände die meiste Zeit ein, bzw.\ hat 
+Sortieren der Liste der Gegenstände die meiste Zeit ein, bzw.\ hat 
 die Höchste Zeitkomplexität, weil das Sortieren einer Liste 
 keine geringere Zeitkomplexität als $(n\log(n))$ haben kann\ \cite[vgl. S. 191--193]{cormen2022introduction}.
 Der Rest des Greedy"=Algorithmus hat eine 
-Laufzeit von $O(n)$.\ \cite[vgl. S. 425ff.]{cormen2022introduction}
+Laufzeit von $O(n)$.\ \cite[vgl. S. 425ff.][]{cormen2022introduction}
 
 \section{Dynamische Programmierung}
-Die dynamische Programmierung ist eine Methode zur 
-Lösung des Rucksackproblems, bei der das Problem in kleinere 
-Teilprobleme aufgeteilt wird und die Lösungen der Teilprobleme 
-abgespeichert werden, um mögliche Überlappungen zu vermeiden, falls 
-diese Teilprobleme erneut berechnet werden müssten.
-
 Um das Rucksackproblem mit dynamischer Programmierung zu 
 lösen, müssen zuerst die Teilprobleme betrachtet werden. 
 Sei $\dpd$ eine Tabelle, die die maximale 
@@ -187,6 +177,7 @@ Dabei ist $\dpd$ die oben beschriebene Tabelle als zweidimensionale Liste
 implementiert. Der Basisfall tritt ein, falls $i$ oder $j$ gleich $0$ werden, 
 das bedeutet, das entweder ein nicht existierender Gegenstand abgefragt wird 
 ($i = 0$) oder kein Platz mehr im Rucksack ist ($j = 0$).
+
 Um den Wert $\dpd[i][j]$ zu berechnen vergleicht der Algorithmus den 
 gesamten Profit, um zu entscheiden ob er den Gegenstand aufnimmt (erster Funktionsaufruf in \verb+max()+), 
 oder nicht (zweiter Funktionsaufruf). Der Algorithmus nimmt den Gegenstand auch nicht auf, 
@@ -194,7 +185,8 @@ falls er nicht mehr in den Rucksack passt. Dabei überspringt der Algorithmus di
 Berechnung, falls schon ein Wert in $\dpd[i][j]$ eingetragen ist (Prinzip der 
 dynamischen Programmierung). $w$ ist die Liste mit den Gewichten und $p$ die 
 Liste mit den Profiten der Gegenstände, dessen Referenzen im code in\ \ref{dp01} 
-immer weitergegeben werden.
+immer weitergegeben werden.\\
+
 \vbox{
 \begin{lstlisting}[language=python, caption=Python code für Dynamische Programmierung, label=dp01][H!]
 def dp_knapsack(dp, i, j, w, p):
@@ -211,13 +203,15 @@ def dp_knapsack(dp, i, j, w, p):
 \end{lstlisting}
 }
 
-Der Wert in $\dpd[1][1]$ gibt die maximale Gesamtwertsumme an und 
+\noindent Der Wert in $\dpd[1][1]$ gibt die maximale Gesamtwertsumme an und 
 repräsentiert somit die optimale Lösung des Rucksackproblems.
 
 Die Laufzeit dieses Algorithmus beträgt $O(nc)$, weil 
 eine Tabelle der Größe $(n+1) x (c+1)$ erstellt wird und 
 jeder Eintrag der Tabelle in konstanter Zeit berechnet wird.
+Weil der Algorithmus damit (auch) von der Größe einer Zahl abhängt, 
+hat er eine \textit{pseudopolynomielle} Zeit-Komplexität.
 
 Der größte Nachteil der Lösung mit dynamischer Programmierung ist, dass 
 sie nur für ganzzahlige Gewichte funktioniert, weil es keine nicht-ganzzahligen 
-indexe gibt.\ \cite[vgl.]{Martello1987}
+indexe gibt.\ \cite[vgl.][]{Martello1987}
